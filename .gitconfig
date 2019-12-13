@@ -1,0 +1,39 @@
+[core]
+    editor = code -w
+[user]
+	name = Tim Antkowiak
+	email = antkowiak.tim@gmail.com
+[alias]
+	graph = log --graph --oneline --decorate
+	st = status
+	ci = commit
+	co = checkout
+	ph = push
+	phf = push --force-with-lease
+	pl = pull
+	ft = fetch
+	fop = fetch origin --prune
+	diffw = diff --color-words
+	ff = merge --ff-only
+	rh = reset --hard
+	fixup = commit --fixup
+	show-commit = show -s --format=\"%h (%s, %ad)\" --date short
+	# Nice view of tags
+	tg = log --decorate --oneline --simplify-by-decoration
+	# Execute command in repo root dir
+	exec = "! "
+	# Show the complete git commit hash of the last commit
+	hash = log -1 --format="%H"
+[http]
+	sslVerify = true
+[push]
+	default = simple
+[rebase]
+	# No need to specify 'git rebase --fixup'
+	autosquash = true
+[rerere]
+	# Decide once what to do with a conflict during a rebase
+	enabled = true
+[merge]
+	# Prevent git from doing a fast forward merge when merging a feature into it's target branch
+	ff = false
